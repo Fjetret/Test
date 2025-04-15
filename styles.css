@@ -483,59 +483,91 @@ footer {
 
 /* Social Media Section */
 .social-media {
-    background-color: var(--white);
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .social-media-content {
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    padding-top: 4rem;
+    padding: 4rem 2rem;
     text-align: center;
+    flex: 1;
 }
 
 .social-media h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: var(--white);
 }
 
 .social-feed-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
     margin: 2rem auto;
     max-width: 1200px;
-    padding: 0 1rem;
 }
 
-.facebook-feed,
-.instagram-feed {
+.social-platform {
     flex: 1;
     max-width: 500px;
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.facebook-feed h3,
-.instagram-feed h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.social-platform:nth-child(2) {
+    background-color: var(--light-bg);
+}
+
+.social-platform:hover {
+    transform: translateY(-5px);
+}
+
+.social-platform h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: var(--primary-color);
 }
 
-.social-buttons {
+.social-placeholder {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: transparent;
+    border-radius: 10px;
 }
 
-.social-buttons a {
+.platform-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.social-placeholder p {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+}
+
+.facebook-button,
+.instagram-button {
     display: inline-block;
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px;
 }
 
 .facebook-button {
@@ -545,6 +577,7 @@ footer {
 
 .facebook-button:hover {
     background-color: #1664d9;
+    transform: scale(1.05);
 }
 
 .instagram-button {
@@ -554,6 +587,7 @@ footer {
 
 .instagram-button:hover {
     background-color: var(--primary-dark);
+    transform: scale(1.05);
 }
 
 /* Responsive design for social feeds */
@@ -561,23 +595,148 @@ footer {
     .social-feed-container {
         flex-direction: column;
         align-items: center;
+        gap: 2rem;
     }
 
-    .facebook-feed,
-    .instagram-feed {
+    .social-platform {
         width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    .social-buttons {
-        flex-direction: column;
-        align-items: center;
+    .social-media h2 {
+        font-size: 2rem;
     }
 
-    .social-buttons a {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
+    .social-platform h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-placeholder {
+        padding: 1rem;
+    }
+}
+
+/* News Section */
+.news {
+    background-color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 4rem 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.news h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-card {
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-text {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.news-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.news-text p {
+    font-size: 1rem;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--primary-dark);
+}
+
+.news-footer {
+    margin-top: 2rem;
+}
+
+.all-news-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.all-news-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Responsive design for news section */
+@media (max-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news h2 {
+        font-size: 2rem;
+    }
+
+    .news-text h3 {
+        font-size: 1.3rem;
     }
 }
