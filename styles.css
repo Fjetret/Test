@@ -91,6 +91,12 @@ nav {
     margin-left: 0rem;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo img {
     height: 40px;
     width: auto;
@@ -235,7 +241,7 @@ section {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
     padding-top: 4rem;
 }
@@ -261,6 +267,7 @@ section {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     max-width: 60%;
 }
 
@@ -472,4 +479,55 @@ footer {
     .services-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Social Media Section */
+.social-media {
+    background-color: var(--white);
+}
+
+.social-media-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.social-media h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.instagram-feed {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Ensure Instagram embeds are responsive */
+.instagram-media {
+    max-width: 100% !important;
+    min-width: 100px !important;
+    margin: 0 auto !important;
+}
+
+.follow-button {
+    margin: 2rem 0;
+}
+
+.follow-button a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.follow-button a:hover {
+    background-color: var(--primary-dark);
 }
