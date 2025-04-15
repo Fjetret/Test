@@ -899,39 +899,166 @@ footer {
 }
 
 /* Responsive design for municipalities section */
+@media (max-width: 1200px) {
+    .municipalities-container {
+        gap: 2rem;
+    }
+
+    .municipality-box {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .municipality-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .booking-banner h2 {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .municipalities-container {
         flex-direction: column;
         height: auto;
+        gap: 2rem;
     }
 
     .municipalities-list {
-        height: 400px;
+        height: 350px;
     }
 
     .testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        height: auto;
+    }
+
+    .testimonial-card {
+        height: 200px;
+    }
+
+    .booking-banner {
+        margin-top: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .municipalities-list {
-        flex-direction: column;
-        height: auto;
-        overflow: auto;
+    .municipalities-content {
+        padding: 2rem 1rem;
     }
 
-    .column {
-        animation: none;
+    .municipalities-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .municipalities-list {
+        padding: 1rem;
+        height: 300px;
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .testimonial-card {
+        height: auto;
+        min-height: 150px;
+    }
+
+    .booking-banner {
         padding: 1.5rem;
     }
 
-    .testimonial-text {
+    .booking-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .booking-banner .book-button {
+        padding: 0.8rem 2rem;
         font-size: 1rem;
     }
+}
+
+@media (max-width: 480px) {
+    .municipalities-list {
+        height: 250px;
+    }
+
+    .municipality-box {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+        min-height: 40px;
+    }
+
+    .municipality-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .testimonial-text p {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+
+    .testimonial-author .role,
+    .testimonial-author .name {
+        font-size: 0.75rem;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+    .municipalities-list {
+        height: 200px;
+    }
+
+    .municipality-box {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        min-height: 35px;
+        gap: 0.5rem;
+    }
+
+    .municipality-logo {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Fix for landscape mode on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .municipalities-container {
+        height: auto;
+    }
+
+    .municipalities-list {
+        height: 200px;
+    }
+
+    .testimonial-card {
+        min-height: 120px;
+    }
+}
+
+/* General responsive fixes */
+body {
+    overflow-x: hidden;
+}
+
+section {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.municipalities {
+    min-height: 100vh;
+    height: auto;
 }
 
 .booking-banner {
