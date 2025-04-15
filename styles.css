@@ -740,3 +740,193 @@ footer {
         font-size: 1.3rem;
     }
 }
+
+/* Municipalities Section */
+.municipalities {
+    background-color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.municipalities-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.municipalities-content h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.municipalities-container {
+    display: flex;
+    gap: 4rem;
+    height: 500px;
+}
+
+.municipalities-list {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+}
+
+.column-up {
+    animation: scrollUp 25s linear infinite;
+}
+
+.column-down {
+    animation: scrollDown 25s linear infinite;
+}
+
+@keyframes scrollUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+}
+
+/* Hover effects for columns */
+.column-up:hover {
+    animation-play-state: paused !important;
+}
+
+.column-down:hover {
+    animation-play-state: paused !important;
+}
+
+/* Remove all other hover rules */
+.column:hover,
+.municipalities-list:hover .column,
+.column-up,
+.column-down {
+    animation-play-state: running;
+}
+
+.municipality-box {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.municipality-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.municipality-box span {
+    flex: 1;
+    text-align: left;
+}
+
+.testimonials {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.testimonial-card {
+    flex: 1;
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text p {
+    margin-bottom: 0.8rem;
+    font-style: italic;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+
+.testimonial-author {
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.testimonial-author .role {
+    font-weight: 600;
+}
+
+.testimonial-author .name {
+    font-size: 0.9rem;
+}
+
+/* Responsive design for municipalities section */
+@media (max-width: 1024px) {
+    .municipalities-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .municipalities-list {
+        height: 400px;
+    }
+
+    .testimonials {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .municipalities-list {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+    }
+
+    .column {
+        animation: none;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
