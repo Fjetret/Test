@@ -3,15 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konstali Helsenor</title>
+    <meta name="description" content="Konstali Helsenor er et ledende bemanningsbyrå innen helse- og omsorgssektoren. Vi tilbyr vikartjenester, rekruttering og kompetanseutvikling for helsepersonell i hele Norge.">
+    <meta name="keywords" content="helsevikar, bemanningsbyrå helse, helsepersonell, sykepleiervikar, helserekruttering, Konstali Helsenor">
+    <meta name="author" content="Konstali Helsenor">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://konstalihelsenor.no/">
+    <meta property="og:title" content="Konstali Helsenor - Ledende bemanningsbyrå innen helse">
+    <meta property="og:description" content="Din pålitelige partner for vikartjenester og rekruttering innen helse- og omsorgssektoren.">
+    <meta property="og:image" content="Logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Konstali Helsenor - Ledende bemanningsbyrå innen helse">
+    <meta name="twitter:description" content="Din pålitelige partner for vikartjenester og rekruttering innen helse- og omsorgssektoren.">
+    <meta name="twitter:image" content="Logo.png">
+
+    <title>Konstali Helsenor | Bemanningsbyrå for helsepersonell</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://www.helsenor.no/">
+
+    <!-- Strukturerte data for søkemotorer -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EmploymentAgency",
+        "name": "Konstali Helsenor",
+        "description": "Ledende bemanningsbyrå innen helse- og omsorgssektoren",
+        "url": "https://helsenor.no",
+        "logo": "https://helsenor.no/Logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+47-123-45-678",
+            "contactType": "customer service",
+            "email": "post@helsenor.no"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "NO"
+        },
+        "sameAs": [
+            "https://www.facebook.com/helsenor",
+            
+        ],
+        "offers": {
+            "@type": "Offer",
+            "itemOffered": [
+                {
+                    "@type": "Service",
+                    "name": "Vikartjenester",
+                    "description": "Kvalifiserte vikarer for helse- og omsorgssektoren"
+                },
+                {
+                    "@type": "Service",
+                    "name": "Rekruttering",
+                    "description": "Rekruttering av helsepersonell"
+                },
+                {
+                    "@type": "Service",
+                    "name": "Kompetanseutvikling",
+                    "description": "Kurs og opplæring for helsepersonell"
+                }
+            ]
+        }
+    }
+    </script>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <section class="hero">
         <header>
             <nav>
                 <div class="logo">
-                    <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    <a href="#hero">
+                        <img src="Logo.png" alt="Konstali Helsenor Logo - Ledende bemanningsbyrå innen helse" width="150" height="50" loading="eager">
+                    </a>
                 </div>
                 <div class="nav-links">
                     <a href="#" id="loginButton">Logg inn</a>
@@ -27,11 +94,11 @@
         </header>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Konstali Helsenor</h1>
-                <p>Din pålitelige partner innen helse- og omsorgssektoren</p>
+                <h1 itemprop="headline">Konstali Helsenor</h1>
+                <p itemprop="description">Din pålitelige partner innen helse- og omsorgssektoren</p>
             </div>
             <div class="hero-image">
-                <img src="Bilde1.svg" alt="Konstali Helsenor">
+                <img src="Bilde1.svg" alt="Helsepersonell i arbeid - Konstali Helsenor" width="800" height="600" loading="eager">
             </div>
         </div>
         <footer>
@@ -44,11 +111,13 @@
         </footer>
     </section>
 
-    <section class="services">
+    <section class="services" itemscope itemtype="https://schema.org/Service">
         <header>
             <nav>
                 <div class="logo">
-                    <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    <a href="#hero">
+                        <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    </a>
                 </div>
                 <div class="nav-links">
                     <a href="#hero">Hjem</a>
@@ -64,11 +133,11 @@
             </nav>
         </header>
         <div class="services-content">
-            <h2>Våre Tjenester</h2>
+            <h2 itemprop="name">Våre Tjenester</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>Vikarbyrå</h3>
-                    <p>Vi tilbyr kvalifiserte vikarer for alle typer stillinger innen helse- og omsorgssektoren.</p>
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <h3 itemprop="name">Vikarbyrå</h3>
+                    <p itemprop="description">Vi tilbyr kvalifiserte vikarer for alle typer stillinger innen helse- og omsorgssektoren.</p>
                 </div>
                 <div class="service-card">
                     <h3>Rekruttering</h3>
@@ -90,11 +159,13 @@
         </footer>
     </section>
 
-    <section class="about">
+    <section class="about" itemscope itemtype="https://schema.org/AboutPage">
         <header>
             <nav>
                 <div class="logo">
-                    <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    <a href="#hero">
+                        <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    </a>
                 </div>
                 <div class="nav-links">
                     <a href="#hero">Hjem</a>
@@ -111,12 +182,14 @@
         </header>
         <div class="about-content">
             <div class="about-image">
-                <img src="Bilde2.svg" alt="Om Konstali Helsenor">
+                <img src="Bilde2.svg" alt="Konstali Helsenor - Profesjonelt helsepersonell" width="800" height="600" loading="lazy">
             </div>
             <div class="about-text">
-                <h2>Om Oss</h2>
-                <p>Konstali Helsenor er et ledende bemanningsbyrå som spesialiserer seg på helse- og omsorgssektoren. Med lang erfaring og et bredt nettverk av kvalifiserte fagfolk, er vi din pålitelige partner for rekruttering og bemanning.</p>
-                <p>Vårt mål er å levere høy kvalitet i alle våre tjenester, og vi er stolte av å kunne tilby personlig service og tilpassede løsninger for våre kunder.</p>
+                <h2 itemprop="name">Om Oss</h2>
+                <div itemprop="description">
+                    <p>Konstali Helsenor er et ledende bemanningsbyrå som spesialiserer seg på helse- og omsorgssektoren. Med lang erfaring og et bredt nettverk av kvalifiserte fagfolk, er vi din pålitelige partner for rekruttering og bemanning.</p>
+                    <p>Vårt mål er å levere høy kvalitet i alle våre tjenester, og vi er stolte av å kunne tilby personlig service og tilpassede løsninger for våre kunder.</p>
+                </div>
             </div>
         </div>
         <footer>
@@ -129,11 +202,13 @@
         </footer>
     </section>
 
-    <section class="contact">
+    <section class="contact" itemscope itemtype="https://schema.org/ContactPage">
         <header>
             <nav>
                 <div class="logo">
-                    <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    <a href="#hero">
+                        <img src="Logo.png" alt="Konstali Helsenor Logo">
+                    </a>
                 </div>
                 <div class="nav-links">
                     <a href="#hero">Hjem</a>
@@ -166,6 +241,52 @@
                     </div>
                     <button type="submit" class="submit-button">Send Melding</button>
                 </form>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p>Telefon: +47 123 45 678</p>
+                    <p>E-post: post@konstalihelsenor.no</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <section class="social-media">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#hero">
+                        <img src="Logo.png" alt="Konstali Helsenor Logo" width="150" height="50" loading="eager">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#hero">Hjem</a>
+                    <a href="#services">Tjenester</a>
+                    <a href="#about">Om Oss</a>
+                    <a href="#contact">Kontakt</a>
+                </div>
+                <button class="mobile-menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+        <div class="social-media-content">
+            <h2>Følg oss på Instagram</h2>
+            <div class="instagram-feed">
+                <blockquote class="instagram-media" data-instgrm-captioned 
+                    data-instgrm-permalink="https://www.instagram.com/p/C3Hs5qZNwXE/"
+                    data-instgrm-version="14">
+                </blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+            <div class="follow-button">
+                <a href="https://www.instagram.com/konstalihelsenor/" target="_blank" rel="noopener">
+                    Følg oss på Instagram
+                </a>
             </div>
         </div>
         <footer>
