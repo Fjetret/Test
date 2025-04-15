@@ -500,34 +500,84 @@ footer {
     color: var(--primary-color);
 }
 
-.instagram-feed {
-    max-width: 800px;
-    margin: 0 auto;
+.social-feed-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
     padding: 0 1rem;
 }
 
-/* Ensure Instagram embeds are responsive */
-.instagram-media {
-    max-width: 100% !important;
-    min-width: 100px !important;
-    margin: 0 auto !important;
+.facebook-feed,
+.instagram-feed {
+    flex: 1;
+    max-width: 500px;
 }
 
-.follow-button {
+.facebook-feed h3,
+.instagram-feed h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     margin: 2rem 0;
 }
 
-.follow-button a {
+.social-buttons a {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--white);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
     transition: background-color 0.3s;
 }
 
-.follow-button a:hover {
+.facebook-button {
+    background-color: #1877f2;
+    color: white;
+}
+
+.facebook-button:hover {
+    background-color: #1664d9;
+}
+
+.instagram-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.instagram-button:hover {
     background-color: var(--primary-dark);
+}
+
+/* Responsive design for social feeds */
+@media (max-width: 1024px) {
+    .social-feed-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .facebook-feed,
+    .instagram-feed {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-buttons a {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
 }
