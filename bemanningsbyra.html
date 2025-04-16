@@ -253,58 +253,71 @@
         </footer>
     </section>
 
-    <section class="news">
-        <header>
-            <nav>
-                <div class="logo">
-                    <a href="#hero">
-                        <img src="Logo.png" alt="Konstali Helsenor Logo" width="150" height="50" loading="eager">
-                    </a>
-                </div>
-                <div class="nav-links">
-                    <a href="#hero">Hjem</a>
-                    <a href="#services">Tjenester</a>
-                    <a href="#about">Om Oss</a>
-                    <a href="#contact">Kontakt</a>
-                </div>
-                <button class="mobile-menu-button">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
-        </header>
+    <!-- News Section -->
+    <section id="news" class="news">
         <div class="news-content">
             <h2>Nyheter</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="nyhet1.jpg" alt="Nyhet 1" loading="lazy">
+            <div class="news-scroll-container">
+                <div class="news-scroll-wrapper">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/nyhet1.jpg" alt="Nyhet 1">
+                        </div>
+                        <div class="news-text">
+                            <h3>Ny vikarportal lansert</h3>
+                            <p>Vi har nå lansert vår nye vikarportal som gjør det enklere å finne og booke vikarer.</p>
+                            <a href="#" class="read-more">Les mer</a>
+                        </div>
                     </div>
-                    <div class="news-text">
-                        <h3>Nyhet 1</h3>
-                        <p>Kort beskrivelse av nyhet 1. Dette kan være en interessant oppdatering eller nyhet fra Konstali Helsenor.</p>
-                        <a href="#" class="read-more">Les mer</a>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/nyhet2.jpg" alt="Nyhet 2">
+                        </div>
+                        <div class="news-text">
+                            <h3>Nye kommuner på plass</h3>
+                            <p>Vi er stolte av å kunne meddele at vi nå samarbeider med flere nye kommuner.</p>
+                            <a href="#" class="read-more">Les mer</a>
+                        </div>
                     </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="nyhet2.jpg" alt="Nyhet 2" loading="lazy">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/nyhet3.jpg" alt="Nyhet 3">
+                        </div>
+                        <div class="news-text">
+                            <h3>Suksessfull oppstart</h3>
+                            <p>Vår nye avdeling i Oslo har hatt en fantastisk start med over 100 nye vikarer.</p>
+                            <a href="#" class="read-more">Les mer</a>
+                        </div>
                     </div>
-                    <div class="news-text">
-                        <h3>Nyhet 2</h3>
-                        <p>Kort beskrivelse av nyhet 2. Dette kan være en spennende utvikling eller viktig informasjon.</p>
-                        <a href="#" class="read-more">Les mer</a>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/nyhet4.jpg" alt="Nyhet 4">
+                        </div>
+                        <div class="news-text">
+                            <h3>Nytt kursprogram</h3>
+                            <p>Vi lanserer et nytt kursprogram for våre vikarer med fokus på kvalitet og sikkerhet.</p>
+                            <a href="#" class="read-more">Les mer</a>
+                        </div>
                     </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="nyhet3.jpg" alt="Nyhet 3" loading="lazy">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/nyhet5.jpg" alt="Nyhet 5">
+                        </div>
+                        <div class="news-text">
+                            <h3>Rekordmåned</h3>
+                            <p>Vi har hatt en rekordmåned med over 1000 vikaroppdrag i hele landet.</p>
+                            <a href="#" class="read-more">Les mer</a>
+                        </div>
                     </div>
-                    <div class="news-text">
-                        <h3>Nyhet 3</h3>
-                        <p>Kort beskrivelse av nyhet 3. Dette kan være en betydningsfull hendelse eller viktig kunngjøring.</p>
-                        <a href="#" class="read-more">Les mer</a>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="assets/nyhet6.jpg" alt="Nyhet 6">
+                        </div>
+                        <div class="news-text">
+                            <h3>Nye samarbeidspartnere</h3>
+                            <p>Vi er glade for å kunne presentere nye samarbeidspartnere som styrker vårt tilbud.</p>
+                            <a href="#" class="read-more">Les mer</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -312,14 +325,6 @@
                 <a href="#" class="all-news-button">Se alle nyheter</a>
             </div>
         </div>
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <p>Telefon: +47 123 45 678</p>
-                    <p>E-post: post@konstalihelsenor.no</p>
-                </div>
-            </div>
-        </footer>
     </section>
 
     <section class="social-media">
@@ -710,6 +715,18 @@
             </div>
         </div>
     </section>
+
+    <!-- Side Navigation -->
+    <div class="side-nav">
+        <a href="#hero" class="nav-dot active"></a>
+        <a href="#services" class="nav-dot"></a>
+        <a href="#about" class="nav-dot"></a>
+        <a href="#municipalities" class="nav-dot"></a>
+        <a href="#profiles" class="nav-dot"></a>
+        <a href="#news" class="nav-dot"></a>
+        <a href="#social-media" class="nav-dot"></a>
+        <a href="#contact" class="nav-dot"></a>
+    </div>
 
     <script src="script.js"></script>
 </body>
