@@ -469,117 +469,182 @@ footer {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    .hero-content,
-    .about-content {
+    /* Base mobile styles */
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+    }
+
+    .section-content {
+        padding: 1rem;
+    }
+
+    /* Hero section */
+    .hero-content {
         flex-direction: column;
         text-align: center;
+        padding-top: 2rem;
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
-    .hero-image,
-    .about-image {
+    .hero-image {
         max-width: 100%;
+        margin-top: 2rem;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* News section mobile improvements */
-    .news-card {
-        flex: 0 0 280px;
-        margin: 0 1rem;
+    /* News section */
+    .news-scroll-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
     }
 
     .news-scroll-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
         gap: 1rem;
-        animation: scrollNews 90s linear infinite;
+        padding: 0 1rem;
+        animation: none;
+    }
+
+    .news-card {
+        flex: 0 0 280px;
+        margin: 0;
+    }
+
+    .news-text {
+        padding: 1rem;
     }
 
     .news-text h3 {
         font-size: 1.2rem;
     }
 
-    .news-text p {
-        font-size: 1rem;
-        line-height: 1.5;
+    /* Profiles section */
+    .profiles-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
     }
 
-    /* Profiles section mobile improvements */
+    .profile-card {
+        height: auto;
+        min-height: 400px;
+    }
+
     .profile-image {
-        height: 150px;
+        height: 200px;
     }
 
     .profile-info {
         padding: 1rem;
     }
 
-    .profile-info h3 {
-        font-size: 1.1rem;
+    /* Municipalities section */
+    .municipalities-container {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
     }
 
-    .profile-info p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-
-    .profile-details li {
-        font-size: 0.9rem;
-    }
-
-    /* Municipalities section mobile improvements */
     .municipalities-list {
-        height: 250px;
+        height: auto;
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+
+    .column {
+        animation: none;
     }
 
     .municipality-box {
-        padding: 0.8rem;
-        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
     }
 
-    .testimonial-text p {
-        font-size: 0.9rem;
-        line-height: 1.4;
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .testimonial-author .role,
-    .testimonial-author .name {
-        font-size: 0.85rem;
+    .testimonial-card {
+        min-height: auto;
     }
 
-    /* Booking banner mobile improvements */
-    .booking-banner {
+    /* Contact form */
+    .contact-form {
+        max-width: 100%;
         padding: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Social media section */
+    .social-feed-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .social-platform {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Booking banner */
+    .booking-banner {
         margin: 1rem;
+        padding: 1.5rem;
     }
 
     .booking-banner h2 {
         font-size: 1.5rem;
     }
 
-    .booking-banner .book-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+    .book-button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Side navigation */
+    .side-nav {
+        display: none;
     }
 }
 
 /* Touch device optimizations */
 @media (hover: none) {
-    .news-card:hover,
-    .profile-card:hover,
-    .municipality-box:hover,
-    .booking-banner .book-button:hover {
-        transform: none;
+    .news-card,
+    .profile-card,
+    .municipality-box,
+    .social-platform,
+    .booking-banner .book-button {
+        transform: none !important;
     }
 
     .news-card:active,
     .profile-card:active,
     .municipality-box:active,
+    .social-platform:active,
     .booking-banner .book-button:active {
-        transform: scale(0.98);
+        transform: scale(0.98) !important;
     }
 }
 
@@ -1461,5 +1526,48 @@ footer {
     .nav-dot {
         width: 10px;
         height: 10px;
+    }
+}
+
+/* Desktop styles (1200px and above) */
+@media (min-width: 1200px) {
+    section {
+        position: fixed;
+        height: 100vh;
+    }
+
+    .section-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .news-scroll-wrapper {
+        animation: scrollNews 60s linear infinite;
+    }
+
+    .profiles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .municipalities-container {
+        flex-direction: row;
+        height: 450px;
+    }
+
+    .municipalities-list {
+        height: 100%;
+    }
+
+    .column {
+        animation: scrollUp 25s linear infinite;
+    }
+
+    .column:nth-child(even) {
+        animation: scrollDown 25s linear infinite;
+    }
+
+    .side-nav {
+        display: flex;
     }
 }
