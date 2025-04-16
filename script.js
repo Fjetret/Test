@@ -63,53 +63,60 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const sections = document.querySelectorAll('section');
+    const navDots = document.querySelectorAll('.nav-dot');
     let currentSection = 0;
-    let isScrolling = false;
 
-    // Set initial active section
-    sections[0].classList.add('active');
+    // Function to update active dot
+    function updateActiveDot(index) {
+        navDots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
 
-    function updateSections(direction) {
+    // Function to go directly to a section
+    function goToSection(index) {
         if (isScrolling) return;
         isScrolling = true;
 
-        const nextSection = direction === 'down' 
-            ? Math.min(currentSection + 1, sections.length - 1)
-            : Math.max(currentSection - 1, 0);
-
-        if (nextSection === currentSection) {
-            isScrolling = false;
-            return;
-        }
-
-        // Remove any existing classes
+        // Remove all classes
         sections.forEach(section => {
             section.classList.remove('active', 'prev', 'next');
         });
 
-        if (direction === 'down') {
-            // When scrolling down:
-            // Next section slides up from bottom
-            sections[nextSection].classList.add('active');
-        } else {
-            // When scrolling up:
-            // Current section moves down, previous section becomes active
-            sections[currentSection].classList.add('next');
-            sections[nextSection].classList.add('active');
-        }
+        // Add active class to target section
+        sections[index].classList.add('active');
 
-        // After transition completes
+        // Update current section and active dot
+        currentSection = index;
+        updateActiveDot(index);
+
+        // Reset scrolling flag
         setTimeout(() => {
-            currentSection = nextSection;
             isScrolling = false;
         }, 800);
     }
 
-    // Handle mouse wheel events
+    // Add click event to dots
+    navDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSection(index);
+        });
+    });
+
+    // Handle scroll events
+    let isScrolling = false;
     window.addEventListener('wheel', (e) => {
         e.preventDefault();
         const direction = e.deltaY > 0 ? 'down' : 'up';
-        updateSections(direction);
+        const nextSection = direction === 'down' 
+            ? Math.min(currentSection + 1, sections.length - 1)
+            : Math.max(currentSection - 1, 0);
+        
+        goToSection(nextSection);
     }, { passive: false });
 
     // Handle touch events
@@ -128,16 +135,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const direction = touchStartY > touchEndY ? 'down' : 'up';
         
         if (Math.abs(touchStartY - touchEndY) > 50) {
-            updateSections(direction);
+            const nextSection = direction === 'down' 
+                ? Math.min(currentSection + 1, sections.length - 1)
+                : Math.max(currentSection - 1, 0);
+            goToSection(nextSection);
         }
     }, { passive: true });
 
     // Handle keyboard navigation
     window.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-            updateSections('down');
+            const nextSection = Math.min(currentSection + 1, sections.length - 1);
+            goToSection(nextSection);
         } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-            updateSections('up');
+            const prevSection = Math.max(currentSection - 1, 0);
+            goToSection(prevSection);
         }
     });
 
@@ -151,8 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             
             if (targetIndex !== -1) {
-                const direction = targetIndex > currentSection ? 'down' : 'up';
-                updateSections(direction);
+                goToSection(targetIndex);
             }
         });
     });
@@ -221,4 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Initialize first section
+    sections[0].classList.add('active');
+    updateActiveDot(0);
 });
